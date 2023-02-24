@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 3</title>
+    <meta charset="UTF-8">
+    <style>
+        .color {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercise 2</h1>
+
+        <p style="font-size: 2.5em">Pick a color:</p>
+        <div class="color" style="background-color: firebrick" onclick="colorChoice('firebrick')"></div>
+        <div class="color" style="background-color: coral" onclick="colorChoice('coral')"></div>
+        <div class="color" style="background-color: fuchsia" onclick="colorChoice('fuchsia')"></div>
+        <div class="color" style="background-color: darkgreen" onclick="colorChoice('darkgreen')"></div>
+        <div class="color" style="background-color: royalblue" onclick="colorChoice('royalblue')"></div>
+        <div class="color" style="background-color: palevioletred" onclick="colorChoice('palevioletred')"></div>
+
+    <div>
+        <p>The output will be displayed below:</p>
+        <p id="hello" style="font-size: 3em"></p>
+    </div>
+    <div style="padding-left: 1000px">
+        <p>History:</p>
+        <ul id="history"></ul>
+    </div>
+    <script>
+		function colorChoice(color) {
+			document.getElementById('hello').style.color = color;
+			document.getElementById('hello').innerHTML = 'Hello world!';
+			const historyElement = document.getElementById('history');
+			const historyList = document.createElement('historyList');
+			historyList.appendChild(document.createTextNode(color));
+			historyElement.appendChild(historyList);
+		}
+    </script>
+</body>
+</html>
